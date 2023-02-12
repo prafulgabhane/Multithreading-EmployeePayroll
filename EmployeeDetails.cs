@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeePayrollServiceSQL
 {
-    public class EmployeeModel
+    public class EmployeeDetails
     {
         public int EmployeeID { get; set; }
         public string EmployeeName { get; set; }
@@ -19,11 +19,10 @@ namespace EmployeePayrollServiceSQL
         public double TaxablePay { get; set; }
         public double Tax { get; set; }
         public double NetPay { get; set; }
-        public DateTime StartDate { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
 
- public EmployeeDetails(int EmployeeID, string EmployeeName, string PhoneNumber, string Address, string Department, char Gender, double BasicPay,
+        public EmployeeDetails(int EmployeeID, string EmployeeName, string PhoneNumber, string Address, string Department, char Gender, double BasicPay,
             double Deductions, double TaxablePay, double Tax, double NetPay, string City, string Country)
         {
             this.EmployeeID = EmployeeID;

@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace EmployeePayrollServiceSQL
 {
-    public class EmployeePayrollOperations
+     public class EmployeePayrollOperations
     {
         List<EmployeeDetails> employeePayrollDetailList = new List<EmployeeDetails>();
 
@@ -22,6 +22,21 @@ namespace EmployeePayrollServiceSQL
             });
         
             Console.WriteLine(this.employeePayrollDetailList.ToString());
+        }
+
+        public void addEmployeeToPayrollWithThread(List<EmployeeDetails> employeePayrollDataList)
+        {
+            employeePayrollDataList.ForEach(employeeData =>
+            {
+                Task thread = new Task(() =>
+                {
+                    Console.WriteLine("Employee being added: " + employeeData.EmployeeName);
+                    this.addEmployeePayroll(employeeData);
+                    Console.WriteLine("Employee Added: " + employeeData.EmployeeName);
+                });
+                thread.Start();
+            });
+            Console.WriteLine(this.employeePayrollDetailList.Count);
         }
 
         public void addEmployeePayroll(EmployeeDetails emp)
