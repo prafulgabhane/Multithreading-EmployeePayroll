@@ -1,4 +1,4 @@
-﻿namespace EmployeePayrollServiceSQL
+namespace EmployeePayrollServiceSQL
 {
      class Program
     {
@@ -63,7 +63,7 @@
         static string[] CreateWordArray(string uri)
         {
             Console.WriteLine($"Retrieving from {uri}");
-            //Download a web page the easy way.
+            //Download web page -> easiest way.
             string blog = new WebClient().DownloadString(uri);
 
             //Separate string into an array of words, reciving sort comman numctuation
@@ -73,5 +73,3 @@
         }
     }
 }
-
-
