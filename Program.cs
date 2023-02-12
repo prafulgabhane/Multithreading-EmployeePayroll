@@ -1,4 +1,4 @@
-﻿namespace EmployeePayrollServiceSQL
+namespace EmployeePayrollServiceSQL
 {
      class Program
     {
